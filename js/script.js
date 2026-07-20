@@ -96,11 +96,13 @@
     document.removeEventListener('keydown', preventLockedKeyboardScroll, { capture: true });
   };
 
-  $('.hero-open')?.addEventListener('click', () => {
+  const heroOpenButton = $('.hero-open');
+  heroOpenButton?.addEventListener('click', () => {
+    heroOpenButton.disabled = true;
     unlockInvitation();
     void startMusic();
-    window.scrollBy({ top: 30, behavior: 'smooth' });
-  });
+    window.scrollBy({ top: 70, behavior: 'smooth' });
+  }, { once: true });
 
   musicButton?.addEventListener('click', async () => {
     if (!audio) return;
