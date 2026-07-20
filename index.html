@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ru" class="invitation-locked">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#030b1d">
+  <meta name="description" content="Приглашение на день рождения Карины — 24 октября 2026 года">
+  <title>Карине 35 — приглашение в сказку</title>
+  <link rel="preload" as="image" href="assets/images/01-hero.webp?v=20260720-3" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="css/style.css?v=20260720-3">
+</head>
+<body>
+  <main class="mobile-site" id="invitation">
+    <section class="visual-section hero-section" aria-label="Приглашение на день рождения Карины">
+      <picture>
+        <source srcset="assets/images/01-hero.webp?v=20260720-3" type="image/webp">
+        <img class="section-image" src="assets/images/01-hero.png?v=20260720-3" alt="Карине 35. Приглашает вас в восточную сказку 24 октября 2026 года" width="941" height="1672" decoding="async" fetchpriority="high">
+      </picture>
+      <button class="hotspot hero-open" type="button" aria-label="Открыть приглашение"></button>
+      <button class="hotspot music-button" type="button" aria-label="Включить или выключить музыку" aria-pressed="false"></button>
+    </section>
+
+    <section class="visual-section reveal" aria-label="О Карине">
+      <picture>
+        <source srcset="assets/images/02-about.webp?v=20260720-3" type="image/webp">
+        <img class="section-image" src="assets/images/02-about.png?v=20260720-3" alt="О Карине" width="941" height="1672" loading="lazy" decoding="async">
+      </picture>
+    </section>
+
+    <section class="visual-section reveal" id="program" aria-label="Программа вечера">
+      <picture>
+        <source srcset="assets/images/03-program.webp?v=20260720-3" type="image/webp">
+        <img class="section-image" src="assets/images/03-program.png?v=20260720-3" alt="Программа вечера: Welcome-зона, банкет, финал и караоке на востоке" width="941" height="1672" loading="lazy" decoding="async">
+      </picture>
+    </section>
+
+    <section class="visual-section reveal venue-section" aria-label="Место проведения">
+      <picture>
+        <source srcset="assets/images/04-venue.webp?v=20260720-3" type="image/webp">
+        <img class="section-image" src="assets/images/04-venue.png?v=20260720-3" alt="Место проведения праздника в Челябинске" width="941" height="1672" loading="lazy" decoding="async">
+      </picture>
+      <a class="hotspot map-link" href="https://yandex.ru/maps/56/chelyabinsk/?ll=61.404790%2C55.072969&mode=search&oid=83281722996&ol=biz&z=15" target="_blank" rel="noopener noreferrer" aria-label="Открыть место проведения на Яндекс Картах"></a>
+    </section>
+
+    <section class="visual-section compact-section reveal" aria-label="Дресс-код">
+      <picture>
+        <source srcset="assets/images/05-dress-code.webp?v=20260720-3" type="image/webp">
+        <img class="section-image" src="assets/images/05-dress-code.png?v=20260720-3" alt="Дресс-код в восточном стиле и рекомендуемые цвета" width="941" height="1672" loading="lazy" decoding="async">
+      </picture>
+    </section>
+
+    <section class="visual-section wide-reference reveal" aria-label="Детали мероприятия">
+      <picture>
+        <source srcset="assets/images/06-details.webp?v=20260720-3" type="image/webp">
+        <img class="section-image" src="assets/images/06-details.png?v=20260720-3" alt="Пожелания по подаркам" width="1672" height="941" loading="lazy" decoding="async">
+      </picture>
+    </section>
+
+    <section class="visual-section countdown-section reveal" aria-label="Обратный отсчёт до дня рождения Карины">
+      <picture>
+        <source srcset="assets/images/07-countdown.webp?v=20260720-3" type="image/webp">
+        <img class="section-image" src="assets/images/07-countdown.png?v=20260720-3" alt="До дня рождения Карины осталось" width="810" height="417" loading="lazy" decoding="async">
+      </picture>
+      <div class="countdown-overlay" role="timer" aria-live="polite" aria-atomic="true">
+        <span class="countdown-number countdown-days" data-unit="days">95</span>
+        <span class="countdown-number countdown-hours" data-unit="hours">00</span>
+        <span class="countdown-number countdown-minutes" data-unit="minutes">00</span>
+        <span class="countdown-number countdown-seconds" data-unit="seconds">00</span>
+      </div>
+      <p class="countdown-finished" hidden>Праздник уже начался!</p>
+    </section>
+
+    <section class="visual-section form-section reveal" aria-label="Анкета гостя">
+      <picture>
+        <source srcset="assets/images/08-form.webp?v=20260720-3" type="image/webp">
+        <img class="section-image form-background" src="assets/images/08-form.png?v=20260720-3" alt="Анкета гостя" width="941" height="1672" loading="lazy" decoding="async">
+      </picture>
+      <form id="guest-form" class="guest-form" novalidate>
+        <label class="sr-only" for="fullName">Имя и фамилия</label>
+        <input id="fullName" name="fullName" class="form-control field-name" type="text" autocomplete="name" placeholder="Введите имя и фамилию" required>
+
+        <fieldset class="choice-group attendance-group">
+          <legend class="sr-only">Подтверждение присутствия</legend>
+          <label class="choice choice-attend">
+            <input type="radio" name="attendance" value="Буду с удовольствием" required>
+            <span class="sr-only">Буду с удовольствием</span>
+          </label>
+          <label class="choice choice-decline">
+            <input type="radio" name="attendance" value="К сожалению, не смогу">
+            <span class="sr-only">К сожалению, не смогу</span>
+          </label>
+        </fieldset>
+
+        <label class="sr-only" for="alcohol">Какой алкоголь предпочитаете</label>
+        <select id="alcohol" name="alcohol" class="form-control select-control field-alcohol" required>
+          <option value="" selected disabled>Выберите напиток</option>
+          <option>Не употребляю алкоголь</option>
+          <option>Вино</option>
+          <option>Шампанское</option>
+          <option>Коньяк</option>
+          <option>Виски</option>
+          <option>Водка</option>
+          <option>Другое</option>
+        </select>
+
+        <label class="sr-only" for="children">Будут ли с вами дети</label>
+        <select id="children" name="children" class="form-control select-control field-children" required>
+          <option value="" selected disabled>Выберите вариант</option>
+          <option value="Да">Да</option>
+          <option value="Нет">Нет</option>
+          <option value="Смогу оставить с родными">Смогу оставить с родными</option>
+        </select>
+
+        <label class="sr-only" for="childrenCount">Количество детей</label>
+        <select id="childrenCount" name="childrenCount" class="form-control select-control field-children-count" disabled>
+          <option value="0" selected>Укажите количество</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+
+        <button class="hotspot submit-button" type="submit" aria-label="Отправить ответ"></button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="contacts-section reveal" aria-labelledby="contacts-title">
+      <div class="contacts-ornament" aria-hidden="true">☾</div>
+      <h2 id="contacts-title">Контакты</h2>
+      <p>По вопросам творческих подарков, сюрпризов и организации праздника можно звонить или писать:</p>
+      <a href="tel:+79969464952"><strong>Кристина</strong><span>организатор</span><b>8 996 946-49-52</b></a>
+      <a href="tel:+79511111103"><strong>Николай</strong><span>ведущий</span><b>8 951 111-11-03</b></a>
+      <div class="contacts-footer">До встречи в сказке</div>
+    </section>
+  </main>
+
+  <audio id="background-music" preload="none" loop data-src="assets/audio/aleksejj-chumakov-arabskaja-noch.mp3?v=20260720-3"></audio>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="js/config.js?v=20260720-3"></script>
+  <script src="js/script.js?v=20260720-3"></script>
+</body>
+</html>
