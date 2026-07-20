@@ -99,7 +99,7 @@
   $('.hero-open')?.addEventListener('click', () => {
     unlockInvitation();
     void startMusic();
-    $('#program')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    window.scrollBy({ top: 30, behavior: 'smooth' });
   });
 
   musicButton?.addEventListener('click', async () => {
