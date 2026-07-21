@@ -20,6 +20,19 @@
     revealItems.forEach((item) => item.classList.add('is-visible'));
   }
 
+  // Run decorative effects only near the viewport to keep mobile rendering light.
+  const effectSections = $$('.has-effects');
+  if ('IntersectionObserver' in window) {
+    const effectObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        entry.target.classList.toggle('effects-active', entry.isIntersecting);
+      });
+    }, { rootMargin: '18% 0px', threshold: 0 });
+    effectSections.forEach((section) => effectObserver.observe(section));
+  } else {
+    effectSections.forEach((section) => section.classList.add('effects-active'));
+  }
+
   // Map URL kept in config for quick replacement.
   const mapLink = $('.map-link');
   if (mapLink && config.mapUrl) mapLink.href = config.mapUrl;
@@ -96,6 +109,19 @@
     document.removeEventListener('keydown', preventLockedKeyboardScroll, { capture: true });
   };
 
+  const cover = $('#invitation-cover');
+  const coverOpenButton = $('.cover-open');
+  const heroSection = $('.hero-section');
+  coverOpenButton?.addEventListener('click', () => {
+    coverOpenButton.disabled = true;
+    cover.classList.add('is-opening');
+    cover.setAttribute('aria-hidden', 'true');
+    unlockInvitation();
+    void startMusic();
+    window.setTimeout(() => heroSection?.classList.add('story-entering'), 560);
+    window.setTimeout(() => cover.remove(), 1200);
+  }, { once: true });
+
   const heroOpenButton = $('.hero-open');
   heroOpenButton?.addEventListener('click', () => {
     heroOpenButton.disabled = true;
@@ -141,16 +167,17 @@
 
   // RSVP form behavior.
   const form = $('#guest-form');
-  const children = $('#children');
+  const childrenChoices = $$('input[name="children"]');
   const childrenCount = $('#childrenCount');
-  children?.addEventListener('change', () => {
-    const hasChildren = children.value === 'Да';
+  const updateChildrenCount = () => {
+    const hasChildren = childrenChoices.some((choice) => choice.checked && choice.value === 'Да');
     if (childrenCount) {
       childrenCount.disabled = !hasChildren;
       childrenCount.required = hasChildren;
       if (!hasChildren) childrenCount.value = '0';
     }
-  });
+  };
+  childrenChoices.forEach((choice) => choice.addEventListener('change', updateChildrenCount));
 
   const status = $('.form-status');
   const submitButton = $('.submit-button');
@@ -200,10 +227,7 @@
       }
       setStatus('Спасибо! Ваш ответ отправлен.', 'success');
       form.reset();
-      if (childrenCount) {
-        childrenCount.disabled = true;
-        childrenCount.required = false;
-      }
+      updateChildrenCount();
       showToast('Спасибо! Ответ сохранён.');
     } catch (error) {
       console.error(error);
