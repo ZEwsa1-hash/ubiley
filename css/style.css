@@ -61,7 +61,7 @@ button, input, select { font: inherit; }
   content: "";
   position: absolute;
   inset: 0;
-  transform: translateY(6px);
+  transform: translateY(14px);
   border-radius: inherit;
   pointer-events: none;
   animation: hero-button-glow 1.8s ease-in-out infinite;
