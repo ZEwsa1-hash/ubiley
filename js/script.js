@@ -101,7 +101,7 @@
     heroOpenButton.disabled = true;
     unlockInvitation();
     void startMusic();
-    window.scrollBy({ top: 70, behavior: 'smooth' });
+    window.scrollBy({ top: 140, behavior: 'smooth' });
   }, { once: true });
 
   musicButton?.addEventListener('click', async () => {

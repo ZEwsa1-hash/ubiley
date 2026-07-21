@@ -56,10 +56,20 @@ button, input, select { font: inherit; }
   width: 57%;
   height: 7%;
   border-radius: 999px;
+}
+.hero-open::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateY(6px);
+  border-radius: inherit;
+  pointer-events: none;
   animation: hero-button-glow 1.8s ease-in-out infinite;
 }
 .hero-open:disabled {
   cursor: default;
+}
+.hero-open:disabled::after {
   animation: none;
   box-shadow: none;
 }
@@ -72,11 +82,11 @@ button, input, select { font: inherit; }
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .hero-open {
+  .hero-open::after {
     animation: none;
     box-shadow: 0 0 0 2px rgba(255, 227, 164, .72), 0 0 20px rgba(255, 188, 66, .7);
   }
-  .hero-open:disabled { box-shadow: none; }
+  .hero-open:disabled::after { box-shadow: none; }
 }
 .music-button { right: 4.5%; top: 3.3%; width: 13.5%; aspect-ratio: 1; border-radius: 50%; }
 .map-link { left: 22%; top: 80.8%; width: 56%; height: 6.5%; border-radius: 999px; }
